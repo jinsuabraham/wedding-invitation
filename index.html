@@ -20,15 +20,16 @@ html{scroll-behavior:smooth}
   --maroon2:    #7a1530;
   --maroon3:    #9b2040;
   --maroon-lt:  #b83050;
-  --gold:       #a87820;
-  --gold2:      #c89830;
-  --gold3:      #e0b850;
+  --gold:       #9a6c14;
+  --gold2:      #b88820;
+  --gold3:      #d0a838;
   --gold-lt:    #f0d080;
-  --gold-dk:    #705010;
+  --gold-dk:    #8a6018;
+  --cream2:     #f5ead8;
   --ink:        #1e0a08;
-  --ink2:       #3a1810;
-  --ink3:       #6a3820;
-  --muted:      #8a6040;
+  --ink2:       #2e1208;
+  --ink3:       #3e1a08;
+  --muted:      #5a3818;
   --green:      #2a5020;
   --green2:     #3a6830;
 }
@@ -241,15 +242,15 @@ body::after{
 /* ══ TYPOGRAPHY ══ */
 .eyebrow{
   font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:.58em;text-transform:uppercase;color:var(--gold);
+  letter-spacing:.58em;text-transform:uppercase;color:var(--gold2);
 }
 .verse-text{
-  font-style:italic;color:var(--ink3);line-height:1.88;
+  font-style:italic;color:var(--ink2);line-height:1.88;
   font-size:clamp(15px,2.4vw,19px);max-width:420px;
 }
 .verse-ref{
   font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:.3em;color:var(--muted);
+  letter-spacing:.3em;color:var(--gold2);
   margin-top:8px;display:block;
 }
 
@@ -261,7 +262,7 @@ body::after{
 .div-line{
   flex:1;height:1px;
   background:linear-gradient(to right,transparent,var(--gold2),transparent);
-  opacity:.55;
+  opacity:.8;
 }
 .div-diamond{
   width:8px;height:8px;
@@ -294,18 +295,18 @@ body::after{
 .fam-lbl{
   font-family:'Cinzel',serif;font-size:9px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:8px;
+  color:var(--gold2);margin-bottom:8px;
 }
-.fam-nm{font-size:15px;color:var(--ink3);line-height:1.78}
+.fam-nm{font-size:15px;color:var(--ink2);line-height:1.78}
 
 /* ══ TOGETHER ══ */
 .tog-lbl{
   font-family:'Cinzel',serif;font-size:9.5px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold);display:block;margin-bottom:12px;
+  color:var(--gold2);display:block;margin-bottom:12px;
 }
 .tog-body{
-  font-style:italic;color:var(--ink3);line-height:1.82;
+  font-style:italic;color:var(--ink2);line-height:1.82;
   font-size:clamp(16px,2.5vw,20px);
 }
 
@@ -333,11 +334,11 @@ body::after{
 }
 
 .date-row{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
-.d-sep{width:1px;height:86px;background:linear-gradient(to bottom,transparent,var(--gold-lt),transparent);opacity:.5}
+.d-sep{width:1px;height:86px;background:linear-gradient(to bottom,transparent,var(--gold-lt),transparent);opacity:.9}
 .d-day{
   font-family:'Cinzel',serif;font-size:10px;
   letter-spacing:.52em;text-transform:uppercase;
-  color:var(--gold-lt);margin-bottom:6px;opacity:.8;
+  color:var(--gold-lt);margin-bottom:6px;
 }
 .d-num{
   font-family:'Cinzel',serif;font-weight:600;
@@ -349,12 +350,12 @@ body::after{
 .d-month{
   font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:clamp(30px,5vw,44px);
-  color:var(--gold-lt);display:block;letter-spacing:.08em;
+  color:var(--gold-lt);display:block;letter-spacing:.08em;text-align:center;
 }
 .d-year{
   font-family:'Cinzel',serif;font-size:11px;
-  letter-spacing:.55em;color:rgba(250,244,232,.6);
-  margin-top:5px;display:block;
+  letter-spacing:.55em;color:var(--cream2);
+  margin-top:5px;display:block;text-align:center;
 }
 
 /* ══ VENUE CARDS ══ */
@@ -373,27 +374,32 @@ body::after{
 .vc::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(to right,transparent,var(--maroon2),transparent);
-  opacity:.7;
+  opacity:1;
 }
 .vc-badge{
   display:inline-block;font-family:'Cinzel',serif;font-size:8px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--maroon2);border:1px solid rgba(92,15,32,.3);
+  color:var(--maroon);border:1px solid rgba(92,15,32,.5);
   padding:4px 12px;margin-bottom:14px;
 }
 .vc-name{
   font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;
   color:var(--maroon);line-height:1.45;margin-bottom:8px;
 }
-.vc-addr{font-size:13.5px;color:var(--ink3);line-height:1.65;margin-bottom:14px}
+.vc-addr{font-size:13.5px;color:var(--ink2);line-height:1.65;margin-bottom:14px}
 .vc-link{
   font-family:'Cinzel',serif;font-size:8.5px;
   letter-spacing:.28em;text-transform:uppercase;
   color:var(--gold-dk);text-decoration:none;
-  border-bottom:1px solid rgba(168,120,32,.4);padding-bottom:2px;
+  border-bottom:1px solid rgba(138,96,24,.6);padding-bottom:2px;
   transition:color .2s,border-color .2s;
 }
 .vc-link:hover{color:var(--maroon2);border-color:var(--maroon2)}
+.vc-time{
+  font-family:'Cinzel',serif;font-size:9px;
+  letter-spacing:.38em;color:var(--maroon2);
+  display:block;margin-bottom:12px;
+}
 
 /* ══ PERSONAL NOTE ══ */
 .note-q{
@@ -402,18 +408,18 @@ body::after{
   margin-bottom:16px;
 }
 .note-body{
-  font-style:italic;color:var(--ink3);line-height:1.9;
+  font-style:italic;color:var(--ink2);line-height:1.9;
   font-size:clamp(15px,2.3vw,18.5px);max-width:480px;margin-bottom:18px;
 }
 .note-sig{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:19px;color:var(--maroon2);
+  font-size:19px;color:var(--maroon);
 }
 
 /* ══ FOOTER ══ */
 .ft-lbl{
   font-family:'Cinzel',serif;font-size:9px;letter-spacing:.42em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:10px;
+  color:var(--gold2);margin-bottom:10px;
 }
 .ft-nm{
   font-family:'Cormorant Garamond',serif;font-size:23px;
@@ -421,7 +427,7 @@ body::after{
 }
 .ft-role{
   font-family:'Jost',sans-serif;font-weight:300;font-size:11px;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);
 }
 
 /* ══ SCROLL HINT ══ */
@@ -769,7 +775,7 @@ body::after{
           <span class="d-num">11</span>
         </div>
         <div class="d-sep"></div>
-        <div style="text-align:left">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
           <span class="d-month">May</span>
           <span class="d-year">— 2026 —</span>
           <div style="margin-top:16px;display:flex;justify-content:center">
@@ -793,6 +799,7 @@ body::after{
         <span class="vc-badge">Holy Matrimony</span>
         <p class="vc-name">St. Osio's Orthodox<br>Syrian Church</p>
         <p class="vc-addr">Naranganam, Kozhencherry</p>
+        <span class="vc-time">11 : 00 AM</span>
         <a class="vc-link" href="https://maps.app.goo.gl/eULogQAuvQJjpphv7" target="_blank">View on Google Maps</a>
       </div>
       <div class="vc">
