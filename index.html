@@ -313,7 +313,7 @@ body::after{
 /* ══ DATE PANEL ══ */
 .date-panel{
   background:var(--maroon);
-  padding:42px 64px;position:relative;
+  padding:42px 32px;position:relative;
   box-shadow:
     0 0 0 1px rgba(92,15,32,.25),
     0 8px 48px rgba(92,15,32,.22),
@@ -333,8 +333,8 @@ body::after{
   border:1px solid rgba(240,208,128,.2);pointer-events:none;
 }
 
-.date-row{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
-.d-sep{width:1px;height:86px;background:linear-gradient(to bottom,transparent,var(--gold-lt),transparent);opacity:.9}
+.date-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:nowrap}
+.d-sep{width:1px;height:86px;background:linear-gradient(to bottom,transparent,var(--gold-lt),transparent);opacity:.9;flex-shrink:0}
 .d-day{
   font-family:'Cinzel',serif;font-size:10px;
   letter-spacing:.52em;text-transform:uppercase;
@@ -342,19 +342,19 @@ body::after{
 }
 .d-num{
   font-family:'Cinzel',serif;font-weight:600;
-  font-size:clamp(68px,13vw,106px);
+  font-size:clamp(52px,11vw,106px);
   color:var(--ivory);line-height:1;display:block;
   letter-spacing:.06em;
   text-shadow:0 0 40px rgba(240,208,128,.4);
 }
 .d-month{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(30px,5vw,44px);
+  font-size:clamp(24px,4.5vw,44px);
   color:var(--gold-lt);display:block;letter-spacing:.08em;text-align:center;
 }
 .d-year{
-  font-family:'Cinzel',serif;font-size:11px;
-  letter-spacing:.55em;color:var(--cream2);
+  font-family:'Cinzel',serif;font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:.4em;color:var(--cream2);
   margin-top:5px;display:block;text-align:center;
 }
 
