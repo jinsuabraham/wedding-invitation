@@ -6,532 +6,517 @@
 <title>Jinsu & Bency — Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Jost:wght@200;300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Cinzel:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 
 :root{
-  --burg-deep:  #1a0508;
-  --burg-dark:  #2a0810;
-  --burg-mid:   #4a1020;
-  --burg:       #6e1830;
-  --burg-lt:    #8b2040;
-  --wine:       #3d0c18;
-  --gold:       #d4a830;
-  --gold2:      #f0cc70;
-  --gold3:      #f8e8b8;
-  --gold-dk:    #c8a050;
-  --cream:      #fff8f0;
-  --cream2:     #f8e8c8;
-  --cream3:     #e8c898;
-  --maroon:     #5a0f1e;
-  --rose:       #c06070;
+  --ivory:      #faf4e8;
+  --parch:      #f2e8d0;
+  --parch2:     #e8d8b8;
+  --parch3:     #d8c8a0;
+  --maroon:     #5c0f20;
+  --maroon2:    #7a1530;
+  --maroon3:    #9b2040;
+  --maroon-lt:  #b83050;
+  --gold:       #a87820;
+  --gold2:      #c89830;
+  --gold3:      #e0b850;
+  --gold-lt:    #f0d080;
+  --gold-dk:    #705010;
+  --ink:        #1e0a08;
+  --ink2:       #3a1810;
+  --ink3:       #6a3820;
+  --muted:      #8a6040;
+  --green:      #2a5020;
+  --green2:     #3a6830;
 }
+
+html,body{min-height:100vh}
 
 body{
-  background:var(--burg-deep);
-  color:var(--cream2);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  min-height:100vh;
-  overflow-x:hidden;
-  position:relative;
+  background: var(--ivory);
+  color: var(--ink2);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ══ LAYERED BACKGROUND ══ */
+/* ══ LAYERED PARCHMENT BG ══ */
 body::before{
   content:'';position:fixed;inset:0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(110,24,48,0.6)  0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 0%   50%,  rgba(80,12,28,0.35)  0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 100% 50%,  rgba(80,12,28,0.35)  0%, transparent 60%),
-    radial-gradient(ellipse 80% 50% at 50% 100%,  rgba(40,8,16,0.7)    0%, transparent 70%);
+    radial-gradient(ellipse 70% 50% at 50% 0%,   rgba(200,152,48,.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 0%   60%,  rgba(92,15,32,.06)  0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 60%,  rgba(92,15,32,.06)  0%, transparent 55%),
+    radial-gradient(ellipse 70% 40% at 50% 100%,  rgba(168,120,32,.1) 0%, transparent 60%);
   pointer-events:none;z-index:0;
 }
 
-/* ══ BROCADE PATTERN ══ */
+/* ══ PAPER TEXTURE ══ */
 body::after{
   content:'';position:fixed;inset:0;
   background-image:
-    repeating-linear-gradient(45deg,  rgba(201,153,30,0.03) 0px, rgba(201,153,30,0.03) 1px, transparent 1px, transparent 18px),
-    repeating-linear-gradient(-45deg, rgba(201,153,30,0.03) 0px, rgba(201,153,30,0.03) 1px, transparent 1px, transparent 18px);
+    repeating-linear-gradient(0deg,   rgba(168,120,32,.018) 0,rgba(168,120,32,.018) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(90deg,  rgba(168,120,32,.012) 0,rgba(168,120,32,.012) 1px, transparent 1px, transparent 36px);
   pointer-events:none;z-index:0;
 }
 
-/* ══ FIXED ORNATE BORDER ══ */
-.border-frame{
-  position:fixed;inset:8px;
-  border:2px solid rgba(201,153,30,0.55);
+/* ══ FIXED DOUBLE BORDER ══ */
+.frame-outer{
+  position:fixed;inset:9px;
+  border:1.5px solid rgba(168,120,32,.55);
   pointer-events:none;z-index:300;
-  box-shadow:
-    inset 0 0 30px rgba(201,153,30,0.06),
-    0 0 30px rgba(201,153,30,0.06);
 }
-.border-frame::before{
-  content:'';position:absolute;inset:5px;
-  border:1px solid rgba(201,153,30,0.25);
+.frame-inner{
+  position:fixed;inset:15px;
+  border:1px solid rgba(168,120,32,.28);
+  pointer-events:none;z-index:300;
 }
-.border-frame::after{
-  content:'';position:absolute;inset:10px;
-  border:1px solid rgba(201,153,30,0.1);
+.frame-innermost{
+  position:fixed;inset:20px;
+  border:1px solid rgba(168,120,32,.12);
+  pointer-events:none;z-index:300;
 }
 
 /* ══ CORNER ORNAMENTS ══ */
 .corner{position:fixed;z-index:301;pointer-events:none}
 .corner svg{display:block}
-.corner--tl{top:4px;left:4px}
-.corner--tr{top:4px;right:4px;transform:scaleX(-1)}
-.corner--bl{bottom:4px;left:4px;transform:scaleY(-1)}
-.corner--br{bottom:4px;right:4px;transform:scale(-1)}
+.corner.tl{top:5px;left:5px}
+.corner.tr{top:5px;right:5px;transform:scaleX(-1)}
+.corner.bl{bottom:5px;left:5px;transform:scaleY(-1)}
+.corner.br{bottom:5px;right:5px;transform:scale(-1)}
 
-/* ══ STARS ══ */
-#stars{position:fixed;inset:0;z-index:1;pointer-events:none}
-.star{
-  position:absolute;background:#fff;border-radius:50%;
-  animation:twinkle var(--d) var(--dl) ease-in-out infinite alternate;
-}
-@keyframes twinkle{from{opacity:.05}to{opacity:.7}}
-
-/* ══ PETALS ══ */
+/* ══ FLOATING PETALS ══ */
 #petals{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
 .petal{
   position:absolute;top:-30px;opacity:0;
-  border-radius:70% 0 70% 0;
   animation:petalfall linear infinite;
 }
 @keyframes petalfall{
-  0%  {opacity:0;transform:rotate(0)}
-  8%  {opacity:.8}
-  92% {opacity:.5}
+  0%  {opacity:0;transform:rotate(0deg)}
+  8%  {opacity:.65}
+  90% {opacity:.4}
   100%{opacity:0;transform:translateX(var(--dx)) rotate(var(--rot));margin-top:108vh}
 }
 
-/* ══ GOLD SPARKS ══ */
-#sparks{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
-.spark{
+/* ══ GOLD MOTES ══ */
+#motes{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.mote{
   position:absolute;border-radius:50%;opacity:0;
-  background:radial-gradient(circle,#f5dfa0 0%,#c9991e 60%,transparent 100%);
-  animation:sparkrise linear infinite;
+  background:radial-gradient(circle,#e0b850 0%,#a87820 65%,transparent 100%);
+  animation:moterise linear infinite;
 }
-@keyframes sparkrise{
-  0%  {opacity:0;transform:translateY(0) translateX(0) scale(0.5)}
-  20% {opacity:.9}
-  80% {opacity:.3}
-  100%{opacity:0;transform:translateY(-140px) translateX(var(--sx)) scale(0.2)}
+@keyframes moterise{
+  0%  {opacity:0;transform:translateY(0) translateX(0) scale(.6)}
+  18% {opacity:.55}
+  82% {opacity:.2}
+  100%{opacity:0;transform:translateY(-110px) translateX(var(--mx)) scale(.2)}
 }
 
 /* ══ PAGE ══ */
 .page{
   position:relative;z-index:10;
   max-width:720px;margin:0 auto;
-  padding:0 28px 100px;
+  padding:0 28px 90px;
   display:flex;flex-direction:column;align-items:center;text-align:center;
 }
 
 /* ══ SCENE REVEALS ══ */
 .scene{
-  opacity:0;transform:translateY(36px);
-  transition:opacity 1.3s cubic-bezier(.2,0,.1,1), transform 1.3s cubic-bezier(.2,0,.1,1);
+  opacity:0;transform:translateY(28px);
+  transition:opacity 1.2s cubic-bezier(.2,0,.1,1), transform 1.2s cubic-bezier(.2,0,.1,1);
   width:100%;display:flex;flex-direction:column;align-items:center;
 }
 .scene.visible{opacity:1;transform:translateY(0)}
 
-/* ══ HERO TOP ORNAMENT ══ */
-.hero-ornament{
-  width:100%;max-width:560px;
-  margin:0 auto;
-}
-
 /* ══ CANDLES ══ */
-.candle-stage{
+.candle-row{
   display:flex;justify-content:space-between;align-items:flex-end;
-  width:100%;max-width:540px;padding:0 10px;position:relative;z-index:3;
+  width:100%;max-width:560px;padding:0 10px;position:relative;z-index:3;
 }
-.candle-unit{display:flex;flex-direction:column;align-items:center}
+.candle{display:flex;flex-direction:column;align-items:center}
 
-/* Flame */
-.flame-assembly{position:relative;margin:0 auto}
-.f-glow{
+.flame-wrap{position:relative;margin:0 auto}
+.f-aura{
   position:absolute;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(232,191,96,.55) 0%,transparent 70%);
-  animation:fglow 1.9s ease-in-out infinite alternate;
   left:50%;transform:translateX(-50%);
+  animation:faura 2s ease-in-out infinite alternate;
 }
 .f-outer{
   position:absolute;bottom:0;left:50%;transform:translateX(-50%);
   border-radius:50% 50% 35% 35%;
-  background:radial-gradient(ellipse at 50% 80%,rgba(255,200,60,.6) 0%,rgba(255,100,0,.35) 60%,transparent 100%);
-  animation:flk 1.4s ease-in-out infinite alternate-reverse;
+  background:radial-gradient(ellipse at 50% 80%,rgba(255,200,60,.55) 0%,rgba(255,110,10,.3) 60%,transparent 100%);
+  animation:fflk 1.5s ease-in-out infinite alternate-reverse;
 }
 .f-mid{
   position:absolute;bottom:0;left:50%;transform:translateX(-50%);
   border-radius:50% 50% 35% 35%;
-  background:radial-gradient(ellipse at 50% 80%,#fffbe0 0%,#ffe050 40%,#ff8c00 75%,transparent 100%);
-  animation:flk 0.8s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse at 50% 82%,#fffce0 0%,#ffe060 38%,#ff8c00 72%,transparent 100%);
+  animation:fflk .85s ease-in-out infinite alternate;
 }
 .f-core{
   position:absolute;bottom:2px;left:50%;transform:translateX(-50%);
   border-radius:50%;
-  background:radial-gradient(ellipse,#fff 0%,rgba(255,250,220,.8) 60%,transparent 100%);
-  animation:flk 0.6s ease-in-out infinite alternate-reverse;
+  background:radial-gradient(ellipse,#fff 0%,rgba(255,252,220,.8) 55%,transparent 100%);
+  animation:fflk .6s ease-in-out infinite alternate-reverse;
 }
-@keyframes flk{
-  from{transform:translateX(-50%) scaleX(1)   scaleY(1)   rotate(0)}
-  to  {transform:translateX(-50%) scaleX(.86) scaleY(.92) rotate(1.5deg)}
+@keyframes fflk{
+  from{transform:translateX(-50%) scaleX(1)    scaleY(1)   rotate(0)}
+  to  {transform:translateX(-50%) scaleX(.87)  scaleY(.92) rotate(1.5deg)}
 }
-@keyframes fglow{
-  from{opacity:.5;transform:translateX(-50%) scale(.9)}
-  to  {opacity:1;transform:translateX(-50%) scale(1.25)}
+@keyframes faura{
+  from{opacity:.45;transform:translateX(-50%) scale(.88)}
+  to  {opacity:.9; transform:translateX(-50%) scale(1.22)}
 }
 
-.wick{width:1.5px;margin:0 auto;background:#1a0d04}
-.wax-body{
+.wick{width:1.5px;margin:0 auto;background:#2a1204}
+.wax{
   border-radius:3px 3px 2px 2px;position:relative;overflow:hidden;
-  background:linear-gradient(to right,#c8b8a0 0%,#e8dcc8 30%,#f5edd8 50%,#d4c4a0 75%,#b8a888 100%);
-  box-shadow:
-    inset -3px 0 6px rgba(0,0,0,0.15),
-    inset 2px 0 4px rgba(255,255,255,0.25),
-    0 0 18px 4px rgba(232,191,96,0.15);
+  background:linear-gradient(to right,#d8cdb8 0%,#f0e8d0 30%,#faf4e8 50%,#e0d0b0 75%,#c8b898 100%);
+  box-shadow:inset -2px 0 5px rgba(0,0,0,.08),inset 2px 0 3px rgba(255,255,255,.4),
+             0 0 14px 4px rgba(200,152,48,.14);
 }
-.wax-body::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:40%;
-  background:linear-gradient(to top,rgba(100,60,10,.3),transparent);
+.wax::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:38%;
+  background:linear-gradient(to top,rgba(92,15,32,.15),transparent);
 }
-.wax-drip{
-  position:absolute;width:4px;border-radius:0 0 50% 50%;
-  background:#e8dcc8;top:0;
-}
-.candle-aura{
-  position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+.wax-drip{position:absolute;border-radius:0 0 50% 50%;background:#f0e8d0;top:0}
+.c-aura{
+  position:absolute;top:-36px;left:50%;transform:translateX(-50%);
   border-radius:50%;
-  background:radial-gradient(ellipse,rgba(232,191,96,.45) 0%,transparent 70%);
-  animation:fglow 2.2s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse,rgba(200,152,48,.38) 0%,transparent 70%);
+  animation:faura 2.3s ease-in-out infinite alternate;
   pointer-events:none;
 }
 
-/* sizes */
-.sz-xl .flame-assembly{width:24px;height:34px}
-.sz-xl .f-glow  {width:70px;height:70px;top:-55px}
-.sz-xl .f-outer {width:22px;height:32px}
-.sz-xl .f-mid   {width:13px;height:22px}
-.sz-xl .f-core  {width:7px;height:10px}
+.sz-xl .flame-wrap{width:22px;height:32px}
+.sz-xl .f-aura  {width:68px;height:68px;top:-54px}
+.sz-xl .f-outer {width:20px;height:30px}
+.sz-xl .f-mid   {width:12px;height:20px}
+.sz-xl .f-core  {width:6px;height:9px}
 .sz-xl .wick    {height:10px}
-.sz-xl .wax-body{width:20px;height:110px}
-.sz-xl .candle-aura{width:80px;height:80px}
+.sz-xl .wax     {width:18px;height:108px}
+.sz-xl .c-aura  {width:78px;height:78px}
 
-.sz-lg .flame-assembly{width:20px;height:28px}
-.sz-lg .f-glow  {width:55px;height:55px;top:-44px}
-.sz-lg .f-outer {width:18px;height:26px}
-.sz-lg .f-mid   {width:11px;height:18px}
-.sz-lg .f-core  {width:6px;height:8px}
+.sz-lg .flame-wrap{width:18px;height:26px}
+.sz-lg .f-aura  {width:52px;height:52px;top:-42px}
+.sz-lg .f-outer {width:16px;height:24px}
+.sz-lg .f-mid   {width:10px;height:17px}
+.sz-lg .f-core  {width:5px;height:7px}
 .sz-lg .wick    {height:8px}
-.sz-lg .wax-body{width:17px;height:80px}
-.sz-lg .candle-aura{width:62px;height:62px}
+.sz-lg .wax     {width:15px;height:76px}
+.sz-lg .c-aura  {width:60px;height:60px}
 
-.sz-md .flame-assembly{width:16px;height:22px}
-.sz-md .f-glow  {width:42px;height:42px;top:-34px}
-.sz-md .f-outer {width:15px;height:20px}
-.sz-md .f-mid   {width:9px;height:14px}
-.sz-md .f-core  {width:5px;height:6px}
-.sz-md .wick    {height:7px}
-.sz-md .wax-body{width:14px;height:58px}
-.sz-md .candle-aura{width:48px;height:48px}
+.sz-md .flame-wrap{width:14px;height:20px}
+.sz-md .f-aura  {width:40px;height:40px;top:-32px}
+.sz-md .f-outer {width:13px;height:18px}
+.sz-md .f-mid   {width:8px;height:13px}
+.sz-md .f-core  {width:4px;height:6px}
+.sz-md .wick    {height:6px}
+.sz-md .wax     {width:12px;height:54px}
+.sz-md .c-aura  {width:46px;height:46px}
 
-.sz-sm .flame-assembly{width:13px;height:18px}
-.sz-sm .f-glow  {width:34px;height:34px;top:-27px}
-.sz-sm .f-outer {width:12px;height:16px}
-.sz-sm .f-mid   {width:7px;height:11px}
-.sz-sm .f-core  {width:4px;height:5px}
-.sz-sm .wick    {height:6px}
-.sz-sm .wax-body{width:11px;height:40px}
-.sz-sm .candle-aura{width:38px;height:38px}
+.sz-sm .flame-wrap{width:11px;height:16px}
+.sz-sm .f-aura  {width:30px;height:30px;top:-24px}
+.sz-sm .f-outer {width:10px;height:14px}
+.sz-sm .f-mid   {width:7px;height:10px}
+.sz-sm .f-core  {width:3px;height:5px}
+.sz-sm .wick    {height:5px}
+.sz-sm .wax     {width:10px;height:38px}
+.sz-sm .c-aura  {width:34px;height:34px}
 
 /* ══ CROSS + ARCH CENTER ══ */
-.arch-center{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 8px}
-.cross-halo-wrap{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.arch-center{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 6px}
+.halo-wrap{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
 .halo-l1{position:absolute;border-radius:50%;animation:haloPulse 2.8s ease-in-out infinite alternate}
 .halo-l2{position:absolute;border-radius:50%;animation:haloPulse 1.9s ease-in-out infinite alternate-reverse}
-.halo-l3{position:absolute;border-radius:50%;animation:haloPulse 3.4s ease-in-out infinite alternate}
+.halo-l3{position:absolute;border-radius:50%;animation:haloPulse 3.5s ease-in-out infinite alternate}
 @keyframes haloPulse{
-  from{opacity:.4;transform:scale(.88)}
-  to  {opacity:1;transform:scale(1.1)}
+  from{opacity:.3;transform:scale(.88)}
+  to  {opacity:.85;transform:scale(1.1)}
 }
 
 /* ══ TYPOGRAPHY ══ */
 .eyebrow{
   font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:.6em;text-transform:uppercase;
-  color:var(--gold2);
+  letter-spacing:.58em;text-transform:uppercase;color:var(--gold);
 }
-.verse-italic{
-  font-style:italic;color:var(--cream2);line-height:1.85;
+.verse-text{
+  font-style:italic;color:var(--ink3);line-height:1.88;
   font-size:clamp(15px,2.4vw,19px);max-width:420px;
 }
 .verse-ref{
   font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:.3em;color:var(--gold2);
-  margin-top:9px;display:block;
+  letter-spacing:.3em;color:var(--muted);
+  margin-top:8px;display:block;
 }
 
-/* ══ DIVIDERS ══ */
-.div-gold{
+/* ══ DIVIDER ══ */
+.divider{
   display:flex;align-items:center;gap:14px;
-  width:100%;max-width:460px;
+  width:100%;max-width:480px;
 }
-.div-gold .ln{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.5}
-.div-gold .dia{
+.div-line{
+  flex:1;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold2),transparent);
+  opacity:.55;
+}
+.div-diamond{
   width:8px;height:8px;
   background:var(--gold2);transform:rotate(45deg);flex-shrink:0;
-  box-shadow:0 0 8px 2px rgba(201,153,30,.4);
+  box-shadow:0 0 6px 2px rgba(200,152,48,.3);
 }
 
 /* ══ NAMES ══ */
-.name-wrap{position:relative}
 .name-groom{
   font-family:'Cormorant Garamond',serif;font-weight:700;
-  font-size:clamp(80px,16.5vw,136px);
-  color:var(--cream);line-height:.9;display:block;
+  font-size:clamp(78px,16vw,132px);
+  color:var(--maroon);line-height:.9;display:block;
   letter-spacing:-.015em;
-  text-shadow:0 0 80px rgba(201,153,30,.35),0 2px 20px rgba(0,0,0,.5);
 }
 .name-amp{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(34px,6vw,54px);
+  font-size:clamp(32px,5.5vw,52px);
   color:var(--gold2);display:block;
   margin:4px 0;letter-spacing:.12em;
-  text-shadow:0 0 30px rgba(201,153,30,.6);
 }
 .name-bride{
   font-family:'Cormorant Garamond',serif;font-weight:700;
-  font-size:clamp(80px,16.5vw,136px);
-  color:var(--cream2);line-height:.9;display:block;
+  font-size:clamp(78px,16vw,132px);
+  color:var(--maroon2);line-height:.9;display:block;
   letter-spacing:-.015em;
-  text-shadow:0 0 80px rgba(201,153,30,.2),0 2px 20px rgba(0,0,0,.5);
 }
 
 /* ══ FAMILIES ══ */
-.fam-grid{display:flex;gap:56px;justify-content:center;flex-wrap:wrap}
+.fam-grid{display:flex;gap:54px;justify-content:center;flex-wrap:wrap}
 .fam-lbl{
   font-family:'Cinzel',serif;font-size:9px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:8px;
+  color:var(--gold);margin-bottom:8px;
 }
-.fam-nm{font-size:15px;color:var(--cream2);line-height:1.8}
+.fam-nm{font-size:15px;color:var(--ink3);line-height:1.78}
 
-/* ══ INVITE ══ */
-.inv-lbl{
+/* ══ TOGETHER ══ */
+.tog-lbl{
   font-family:'Cinzel',serif;font-size:9.5px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold2);display:block;margin-bottom:12px;
+  color:var(--gold);display:block;margin-bottom:12px;
 }
-.inv-body{
-  font-style:italic;color:var(--cream2);line-height:1.8;
+.tog-body{
+  font-style:italic;color:var(--ink3);line-height:1.82;
   font-size:clamp(16px,2.5vw,20px);
 }
 
-/* ══ DATE SLAB ══ */
-.date-slab{
-  width:100%;max-width:540px;
-  background:linear-gradient(135deg,var(--burg-mid) 0%,var(--burg) 40%,var(--burg-mid) 100%);
-  border:1px solid rgba(201,153,30,.5);
-  padding:44px 40px;position:relative;
+/* ══ DATE PANEL ══ */
+.date-panel{
+  background:var(--maroon);
+  padding:42px 64px;position:relative;
   box-shadow:
-    0 0 0 1px rgba(201,153,30,.15),
-    0 0 60px rgba(110,24,48,.6),
-    inset 0 0 40px rgba(0,0,0,.3);
+    0 0 0 1px rgba(92,15,32,.25),
+    0 8px 48px rgba(92,15,32,.22),
+    inset 0 0 40px rgba(0,0,0,.15);
+  max-width:520px;width:100%;
 }
-/* ornate corner pieces */
-.date-slab::before,.date-slab::after,.date-slab .ds3,.date-slab .ds4{
-  content:'';position:absolute;width:20px;height:20px;
-  border-color:var(--gold2);border-style:solid;
+.date-panel::before,.date-panel::after,.date-panel .dp3,.date-panel .dp4{
+  content:'';position:absolute;width:18px;height:18px;
+  border-color:var(--gold-lt);border-style:solid;
 }
-.date-slab::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.date-slab::after {bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-.date-slab .ds3{top:-1px;right:-1px;border-width:2px 2px 0 0}
-.date-slab .ds4{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
-/* inner border */
-.date-slab .ds-inner{
+.date-panel::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.date-panel::after {bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.date-panel .dp3{top:-1px;right:-1px;border-width:2px 2px 0 0}
+.date-panel .dp4{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+.date-panel .dp-inner{
   position:absolute;inset:8px;
-  border:1px solid rgba(201,153,30,.2);
-  pointer-events:none;
+  border:1px solid rgba(240,208,128,.2);pointer-events:none;
 }
 
-.date-row{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
-.date-col{text-align:center}
-.d-sep{width:1px;height:80px;background:linear-gradient(to bottom,transparent,var(--gold2),transparent);opacity:.8}
+.date-row{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+.d-sep{width:1px;height:86px;background:linear-gradient(to bottom,transparent,var(--gold-lt),transparent);opacity:.5}
 .d-day{
   font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:.5em;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:6px;
+  letter-spacing:.52em;text-transform:uppercase;
+  color:var(--gold-lt);margin-bottom:6px;opacity:.8;
 }
 .d-num{
   font-family:'Cinzel',serif;font-weight:600;
-  font-size:clamp(68px,13vw,104px);
-  color:var(--cream);line-height:1;display:block;
-  letter-spacing:.08em;
-  text-shadow:0 0 40px rgba(201,153,30,.55), 0 0 80px rgba(201,153,30,.2);
+  font-size:clamp(68px,13vw,106px);
+  color:var(--ivory);line-height:1;display:block;
+  letter-spacing:.06em;
+  text-shadow:0 0 40px rgba(240,208,128,.4);
 }
 .d-month{
   font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:clamp(30px,5vw,44px);
-  color:var(--gold2);display:block;letter-spacing:.08em;
+  color:var(--gold-lt);display:block;letter-spacing:.08em;
 }
 .d-year{
   font-family:'Cinzel',serif;font-size:11px;
-  letter-spacing:.55em;color:var(--cream2);
-  margin-top:4px;display:block;
+  letter-spacing:.55em;color:rgba(250,244,232,.6);
+  margin-top:5px;display:block;
 }
-.d-cross svg{opacity:.8}
 
 /* ══ VENUE CARDS ══ */
-.venue-wrap{
+.venue-grid{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:2px;width:100%;
-  background:rgba(201,153,30,.3);
-  border:1px solid rgba(201,153,30,.35);
-  box-shadow:0 0 40px rgba(0,0,0,.4);
+  gap:16px;width:100%;
 }
-@media(max-width:500px){.venue-wrap{grid-template-columns:1fr}}
+@media(max-width:500px){.venue-grid{grid-template-columns:1fr}}
 .vc{
-  background:var(--burg-dark);
-  padding:32px 26px;text-align:center;position:relative;
+  background:var(--parch);
+  border:1px solid rgba(168,120,32,.3);
+  padding:30px 24px;text-align:center;
+  position:relative;
+  box-shadow:0 2px 20px rgba(92,15,32,.07);
 }
 .vc::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(to right,transparent,var(--gold2),transparent);
-  opacity:.6;
+  background:linear-gradient(to right,transparent,var(--maroon2),transparent);
+  opacity:.7;
 }
 .vc-badge{
   display:inline-block;font-family:'Cinzel',serif;font-size:8px;
   letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold2);
-  border:1px solid rgba(201,153,30,.6);
-  padding:4px 12px;margin-bottom:16px;
+  color:var(--maroon2);border:1px solid rgba(92,15,32,.3);
+  padding:4px 12px;margin-bottom:14px;
 }
 .vc-name{
-  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
-  color:var(--cream);line-height:1.45;margin-bottom:8px;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;
+  color:var(--maroon);line-height:1.45;margin-bottom:8px;
 }
-.vc-addr{font-size:13.5px;color:var(--cream2);line-height:1.65;margin-bottom:16px}
+.vc-addr{font-size:13.5px;color:var(--ink3);line-height:1.65;margin-bottom:14px}
 .vc-link{
   font-family:'Cinzel',serif;font-size:8.5px;
   letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold2);text-decoration:none;
-  border-bottom:1px solid rgba(201,153,30,.55);padding-bottom:2px;
+  color:var(--gold-dk);text-decoration:none;
+  border-bottom:1px solid rgba(168,120,32,.4);padding-bottom:2px;
   transition:color .2s,border-color .2s;
 }
-.vc-link:hover{color:var(--gold3);border-color:var(--gold2)}
+.vc-link:hover{color:var(--maroon2);border-color:var(--maroon2)}
 
-/* ══ NOTE ══ */
+/* ══ PERSONAL NOTE ══ */
 .note-q{
   font-family:'Cormorant Garamond',serif;font-size:90px;
-  color:var(--burg-lt);line-height:.4;display:block;
-  margin-bottom:16px;opacity:.7;
+  color:var(--parch2);line-height:.4;display:block;
+  margin-bottom:16px;
 }
-.note-txt{
-  font-style:italic;color:var(--cream2);line-height:1.9;
+.note-body{
+  font-style:italic;color:var(--ink3);line-height:1.9;
   font-size:clamp(15px,2.3vw,18.5px);max-width:480px;margin-bottom:18px;
 }
 .note-sig{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:19px;color:var(--gold2);
+  font-size:19px;color:var(--maroon2);
 }
 
 /* ══ FOOTER ══ */
 .ft-lbl{
   font-family:'Cinzel',serif;font-size:9px;letter-spacing:.42em;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:10px;
+  color:var(--muted);margin-bottom:10px;
 }
 .ft-nm{
   font-family:'Cormorant Garamond',serif;font-size:23px;
-  color:var(--cream);margin-bottom:4px;
+  color:var(--maroon);margin-bottom:4px;
 }
 .ft-role{
   font-family:'Jost',sans-serif;font-weight:300;font-size:11px;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--cream2);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
 }
 
 /* ══ SCROLL HINT ══ */
 .scroll-hint{
-  position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
-  z-index:400;display:flex;flex-direction:column;align-items:center;gap:8px;
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%);
+  z-index:400;display:flex;flex-direction:column;align-items:center;gap:7px;
   animation:fadeUp 1s 4s ease both, fadeOut .6s 10s ease forwards;
 }
 .sh-txt{
-  font-family:'Jost',sans-serif;font-weight:300;font-size:9px;
-  letter-spacing:.5em;text-transform:uppercase;color:var(--gold2);
+  font-family:'Jost',sans-serif;font-weight:200;font-size:9px;
+  letter-spacing:.5em;text-transform:uppercase;color:var(--muted);
 }
-.sh-line{width:1px;height:28px;background:var(--gold2);animation:shline 1.6s ease-in-out infinite}
+.sh-line{width:1px;height:26px;background:var(--gold2);animation:shline 1.6s ease-in-out infinite}
 @keyframes shline{
   0%  {transform:scaleY(0);transform-origin:top}
   50% {transform:scaleY(1);transform-origin:top}
   100%{transform:scaleY(0);transform-origin:bottom}
 }
-@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 @keyframes fadeOut{to{opacity:0;pointer-events:none}}
 
 /* ══ GAPS ══ */
-.g32{height:32px}.g48{height:48px}.g64{height:64px}.g80{height:80px}
+.g24{height:24px}.g32{height:32px}.g40{height:40px}
+.g48{height:48px}.g56{height:56px}.g64{height:64px}
 </style>
 </head>
 <body>
 
-<div class="border-frame"></div>
+<!-- FRAMES -->
+<div class="frame-outer"></div>
+<div class="frame-inner"></div>
+<div class="frame-innermost"></div>
 
 <!-- CORNER ORNAMENTS -->
-<div class="corner corner--tl">
-  <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-    <path d="M2 50L2 2L50 2" stroke="#c9991e" stroke-width="1.5" fill="none"/>
-    <path d="M2 2 Q22 2 22 22" stroke="#c9991e" stroke-width=".7" fill="none" opacity=".4"/>
-    <circle cx="2" cy="2" r="4" fill="#c9991e" opacity=".7"/>
-    <circle cx="26" cy="2" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="2" cy="26" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="8" cy="8" r="1" fill="#e8bf60" opacity=".5"/>
-    <!-- tiny fleur -->
-    <path d="M2 2 Q6 -2 10 2 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
-    <path d="M2 2 Q-2 6 2 10 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
+<div class="corner tl">
+  <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+    <path d="M2 52L2 2L52 2" stroke="#a87820" stroke-width="1.4" fill="none"/>
+    <path d="M2 2 Q24 2 24 24" stroke="#a87820" stroke-width=".6" fill="none" opacity=".4"/>
+    <circle cx="2"  cy="2"  r="4"   fill="#a87820" opacity=".65"/>
+    <circle cx="27" cy="2"  r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="2"  cy="27" r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="9"  cy="9"  r="1.2" fill="#c89830" opacity=".5"/>
+    <!-- fleur petals -->
+    <path d="M2 2 Q7 -4 12 2 Q7 8 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M2 2 Q-4 7 2 12 Q8 7 2 2Z"  fill="#a87820" opacity=".32"/>
+    <!-- leaf sprig -->
+    <path d="M16 2 Q20 -4 24 4 Q18 8 16 2Z" fill="#2a5020" opacity=".4"/>
+    <path d="M2 16 Q-4 20 4 24 Q8 18 2 16Z" fill="#2a5020" opacity=".4"/>
   </svg>
 </div>
-<div class="corner corner--tr">
-  <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-    <path d="M2 50L2 2L50 2" stroke="#c9991e" stroke-width="1.5" fill="none"/>
-    <path d="M2 2 Q22 2 22 22" stroke="#c9991e" stroke-width=".7" fill="none" opacity=".4"/>
-    <circle cx="2" cy="2" r="4" fill="#c9991e" opacity=".7"/>
-    <circle cx="26" cy="2" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="2" cy="26" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="8" cy="8" r="1" fill="#e8bf60" opacity=".5"/>
-    <path d="M2 2 Q6 -2 10 2 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
-    <path d="M2 2 Q-2 6 2 10 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
+<div class="corner tr">
+  <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+    <path d="M2 52L2 2L52 2" stroke="#a87820" stroke-width="1.4" fill="none"/>
+    <path d="M2 2 Q24 2 24 24" stroke="#a87820" stroke-width=".6" fill="none" opacity=".4"/>
+    <circle cx="2"  cy="2"  r="4"   fill="#a87820" opacity=".65"/>
+    <circle cx="27" cy="2"  r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="2"  cy="27" r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="9"  cy="9"  r="1.2" fill="#c89830" opacity=".5"/>
+    <path d="M2 2 Q7 -4 12 2 Q7 8 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M2 2 Q-4 7 2 12 Q8 7 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M16 2 Q20 -4 24 4 Q18 8 16 2Z" fill="#2a5020" opacity=".4"/>
+    <path d="M2 16 Q-4 20 4 24 Q8 18 2 16Z" fill="#2a5020" opacity=".4"/>
   </svg>
 </div>
-<div class="corner corner--bl">
-  <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-    <path d="M2 50L2 2L50 2" stroke="#c9991e" stroke-width="1.5" fill="none"/>
-    <path d="M2 2 Q22 2 22 22" stroke="#c9991e" stroke-width=".7" fill="none" opacity=".4"/>
-    <circle cx="2" cy="2" r="4" fill="#c9991e" opacity=".7"/>
-    <circle cx="26" cy="2" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="2" cy="26" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="8" cy="8" r="1" fill="#e8bf60" opacity=".5"/>
-    <path d="M2 2 Q6 -2 10 2 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
-    <path d="M2 2 Q-2 6 2 10 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
+<div class="corner bl">
+  <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+    <path d="M2 52L2 2L52 2" stroke="#a87820" stroke-width="1.4" fill="none"/>
+    <path d="M2 2 Q24 2 24 24" stroke="#a87820" stroke-width=".6" fill="none" opacity=".4"/>
+    <circle cx="2"  cy="2"  r="4"   fill="#a87820" opacity=".65"/>
+    <circle cx="27" cy="2"  r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="2"  cy="27" r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="9"  cy="9"  r="1.2" fill="#c89830" opacity=".5"/>
+    <path d="M2 2 Q7 -4 12 2 Q7 8 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M2 2 Q-4 7 2 12 Q8 7 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M16 2 Q20 -4 24 4 Q18 8 16 2Z" fill="#2a5020" opacity=".4"/>
+    <path d="M2 16 Q-4 20 4 24 Q8 18 2 16Z" fill="#2a5020" opacity=".4"/>
   </svg>
 </div>
-<div class="corner corner--br">
-  <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-    <path d="M2 50L2 2L50 2" stroke="#c9991e" stroke-width="1.5" fill="none"/>
-    <path d="M2 2 Q22 2 22 22" stroke="#c9991e" stroke-width=".7" fill="none" opacity=".4"/>
-    <circle cx="2" cy="2" r="4" fill="#c9991e" opacity=".7"/>
-    <circle cx="26" cy="2" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="2" cy="26" r="1.5" fill="#c9991e" opacity=".4"/>
-    <circle cx="8" cy="8" r="1" fill="#e8bf60" opacity=".5"/>
-    <path d="M2 2 Q6 -2 10 2 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
-    <path d="M2 2 Q-2 6 2 10 Q6 6 2 2Z" fill="#c9991e" opacity=".35"/>
+<div class="corner br">
+  <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+    <path d="M2 52L2 2L52 2" stroke="#a87820" stroke-width="1.4" fill="none"/>
+    <path d="M2 2 Q24 2 24 24" stroke="#a87820" stroke-width=".6" fill="none" opacity=".4"/>
+    <circle cx="2"  cy="2"  r="4"   fill="#a87820" opacity=".65"/>
+    <circle cx="27" cy="2"  r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="2"  cy="27" r="1.8" fill="#a87820" opacity=".38"/>
+    <circle cx="9"  cy="9"  r="1.2" fill="#c89830" opacity=".5"/>
+    <path d="M2 2 Q7 -4 12 2 Q7 8 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M2 2 Q-4 7 2 12 Q8 7 2 2Z"  fill="#a87820" opacity=".32"/>
+    <path d="M16 2 Q20 -4 24 4 Q18 8 16 2Z" fill="#2a5020" opacity=".4"/>
+    <path d="M2 16 Q-4 20 4 24 Q8 18 2 16Z" fill="#2a5020" opacity=".4"/>
   </svg>
 </div>
 
-<div id="stars"></div>
 <div id="petals"></div>
-<div id="sparks"></div>
+<div id="motes"></div>
 
 <div class="scroll-hint">
   <div class="sh-txt">Scroll</div>
@@ -540,143 +525,138 @@ body::after{
 
 <div class="page">
 
-  <!-- ══ SCENE 1: HERO — CANDLES + ARCH + CROSS ══ -->
+  <!-- ══ S1: HERO CANDLES + ARCH + CROSS ══ -->
   <div class="scene" id="s1">
     <div class="g64"></div>
 
-    <!-- Top arch ornament -->
-    <svg width="100%" viewBox="0 0 600 40" fill="none" style="max-width:580px;margin-bottom:10px;opacity:.7">
-      <line x1="0" y1="20" x2="230" y2="20" stroke="#c9991e" stroke-width=".8" opacity=".5"/>
-      <line x1="370" y1="20" x2="600" y2="20" stroke="#c9991e" stroke-width=".8" opacity=".5"/>
-      <g transform="translate(300,20)">
-        <circle r="18" fill="none" stroke="#c9991e" stroke-width="1" opacity=".5"/>
-        <circle r="10" fill="none" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-        <circle r="3" fill="#c9991e" opacity=".6"/>
-        <line x1="0" y1="-18" x2="0" y2="18" stroke="#c9991e" stroke-width=".8" opacity=".4"/>
-        <line x1="-18" y1="0" x2="18" y2="0" stroke="#c9991e" stroke-width=".8" opacity=".4"/>
-        <circle cx="0" cy="-26" r="2.5" fill="#c9991e" opacity=".4"/>
-        <circle cx="0" cy="26" r="2.5" fill="#c9991e" opacity=".4"/>
-        <circle cx="-26" cy="0" r="2.5" fill="#c9991e" opacity=".4"/>
-        <circle cx="26" cy="0" r="2.5" fill="#c9991e" opacity=".4"/>
+    <!-- TOP ORNAMENT BAR -->
+    <svg width="100%" viewBox="0 0 600 48" fill="none" style="max-width:580px;margin-bottom:12px;opacity:.75">
+      <line x1="0"   y1="24" x2="236" y2="24" stroke="#a87820" stroke-width=".8" opacity=".5"/>
+      <line x1="364" y1="24" x2="600" y2="24" stroke="#a87820" stroke-width=".8" opacity=".5"/>
+      <g transform="translate(300,24)">
+        <circle r="20" fill="none" stroke="#a87820" stroke-width="1"  opacity=".45"/>
+        <circle r="12" fill="none" stroke="#a87820" stroke-width=".6" opacity=".28"/>
+        <circle r="4"  fill="#a87820" opacity=".55"/>
+        <line x1="0" y1="-20" x2="0"  y2="20"  stroke="#a87820" stroke-width=".8" opacity=".38"/>
+        <line x1="-20" y1="0" x2="20" y2="0"   stroke="#a87820" stroke-width=".8" opacity=".38"/>
+        <circle cx="0"  cy="-28" r="2.5" fill="#a87820" opacity=".38"/>
+        <circle cx="0"  cy="28"  r="2.5" fill="#a87820" opacity=".38"/>
+        <circle cx="-28" cy="0" r="2.5" fill="#a87820" opacity=".38"/>
+        <circle cx="28"  cy="0" r="2.5" fill="#a87820" opacity=".38"/>
       </g>
-      <!-- flanking leaves -->
-      <path d="M254 20 Q264 8 274 20 Q264 32 254 20Z" fill="#3a6030" opacity=".55"/>
-      <path d="M326 20 Q336 8 346 20 Q336 32 326 20Z" fill="#3a6030" opacity=".55"/>
-      <circle cx="115" cy="20" r="2" fill="#c9991e" opacity=".35"/>
-      <circle cx="485" cy="20" r="2" fill="#c9991e" opacity=".35"/>
+      <path d="M258 24 Q270 10 282 24 Q270 38 258 24Z" fill="#2a5020" opacity=".5"/>
+      <path d="M318 24 Q330 10 342 24 Q330 38 318 24Z" fill="#2a5020" opacity=".5"/>
+      <circle cx="118" cy="24" r="2.2" fill="#a87820" opacity=".32"/>
+      <circle cx="482" cy="24" r="2.2" fill="#a87820" opacity=".32"/>
     </svg>
 
     <!-- CANDLE STAGE -->
-    <div class="candle-stage">
-      <!-- LEFT: xl lg md sm -->
-      <div class="candle-unit sz-xl">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+    <div class="candle-row">
+      <!-- LEFT xl lg md sm -->
+      <div class="candle sz-xl">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div><div class="wax-drip" style="left:3px;height:12px"></div><div class="wax-drip" style="left:10px;height:7px"></div></div>
+        <div class="wax"><div class="c-aura"></div><div class="wax-drip" style="left:2px;height:14px"></div><div class="wax-drip" style="left:10px;height:8px"></div></div>
       </div>
-      <div class="candle-unit sz-lg">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-lg">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div><div class="wax-drip" style="left:5px;height:9px"></div></div>
+        <div class="wax"><div class="c-aura"></div><div class="wax-drip" style="left:4px;height:9px"></div></div>
       </div>
-      <div class="candle-unit sz-md">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-md">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div></div>
+        <div class="wax"><div class="c-aura"></div></div>
       </div>
-      <div class="candle-unit sz-sm">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-sm">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div></div>
+        <div class="wax"><div class="c-aura"></div></div>
       </div>
 
       <!-- CENTER: CROSS + ARCH -->
       <div class="arch-center">
-        <div class="cross-halo-wrap">
-          <div class="halo-l1" style="width:140px;height:140px;background:radial-gradient(ellipse,rgba(201,153,30,.18) 0%,transparent 70%)"></div>
-          <div class="halo-l2" style="width:96px;height:96px;background:radial-gradient(ellipse,rgba(201,153,30,.28) 0%,transparent 65%)"></div>
-          <div class="halo-l3" style="width:56px;height:56px;background:radial-gradient(ellipse,rgba(201,153,30,.4) 0%,transparent 60%)"></div>
-          <svg width="72" height="90" viewBox="0 0 72 90" fill="none">
-            <!-- outer glow -->
-            <line x1="36" y1="4" x2="36" y2="86" stroke="#e8bf60" stroke-width="7" stroke-linecap="round" opacity=".1"/>
-            <line x1="10" y1="26" x2="62" y2="26" stroke="#e8bf60" stroke-width="7" stroke-linecap="round" opacity=".1"/>
-            <!-- inner glow -->
-            <line x1="36" y1="4" x2="36" y2="86" stroke="#c9991e" stroke-width="4" stroke-linecap="round" opacity=".2"/>
-            <line x1="10" y1="26" x2="62" y2="26" stroke="#c9991e" stroke-width="4" stroke-linecap="round" opacity=".2"/>
+        <div class="halo-wrap">
+          <div class="halo-l1" style="width:140px;height:140px;background:radial-gradient(ellipse,rgba(168,120,32,.18) 0%,transparent 70%)"></div>
+          <div class="halo-l2" style="width:96px;height:96px;background:radial-gradient(ellipse,rgba(168,120,32,.26) 0%,transparent 65%)"></div>
+          <div class="halo-l3" style="width:58px;height:58px;background:radial-gradient(ellipse,rgba(168,120,32,.38) 0%,transparent 60%)"></div>
+          <svg width="68" height="88" viewBox="0 0 68 88" fill="none">
+            <!-- glow layers -->
+            <line x1="34" y1="4"  x2="34"  y2="84" stroke="#c89830" stroke-width="7" stroke-linecap="round" opacity=".08"/>
+            <line x1="10" y1="26" x2="58" y2="26"  stroke="#c89830" stroke-width="7" stroke-linecap="round" opacity=".08"/>
+            <line x1="34" y1="4"  x2="34"  y2="84" stroke="#a87820" stroke-width="3" stroke-linecap="round" opacity=".15"/>
+            <line x1="10" y1="26" x2="58" y2="26"  stroke="#a87820" stroke-width="3" stroke-linecap="round" opacity=".15"/>
             <!-- cross -->
-            <line x1="36" y1="4" x2="36" y2="86" stroke="#c9991e" stroke-width="2.2" stroke-linecap="round"/>
-            <line x1="10" y1="26" x2="62" y2="26" stroke="#c9991e" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="34" y1="4"  x2="34"  y2="84" stroke="#a87820" stroke-width="2" stroke-linecap="round"/>
+            <line x1="10" y1="26" x2="58" y2="26"  stroke="#a87820" stroke-width="2" stroke-linecap="round"/>
             <!-- jewel -->
-            <circle cx="36" cy="26" r="6"   fill="#c9991e" opacity=".7"/>
-            <circle cx="36" cy="26" r="3.5" fill="#f5dfa0"/>
-            <circle cx="36" cy="26" r="1.5" fill="#fff" opacity=".8"/>
+            <circle cx="34" cy="26" r="6"   fill="#a87820" opacity=".65"/>
+            <circle cx="34" cy="26" r="3.5" fill="#e0b850"/>
+            <circle cx="34" cy="26" r="1.5" fill="#fff" opacity=".8"/>
             <!-- end caps -->
-            <circle cx="36" cy="4"  r="2.5" fill="#c9991e" opacity=".6"/>
-            <circle cx="36" cy="86" r="2.5" fill="#c9991e" opacity=".6"/>
-            <circle cx="10" cy="26" r="2.5" fill="#c9991e" opacity=".6"/>
-            <circle cx="62" cy="26" r="2.5" fill="#c9991e" opacity=".6"/>
+            <circle cx="34" cy="4"  r="2.2" fill="#a87820" opacity=".55"/>
+            <circle cx="34" cy="84" r="2.2" fill="#a87820" opacity=".55"/>
+            <circle cx="10" cy="26" r="2.2" fill="#a87820" opacity=".55"/>
+            <circle cx="58" cy="26" r="2.2" fill="#a87820" opacity=".55"/>
           </svg>
         </div>
-        <!-- Church Arch -->
-        <svg viewBox="0 0 380 100" fill="none" style="width:100%;max-width:380px">
-          <!-- outer arch -->
-          <path d="M18 100 L18 50 Q18 6 190 6 Q362 6 362 50 L362 100" stroke="#c9991e" stroke-width="1.4" fill="none" opacity=".45"/>
-          <!-- mid arch -->
-          <path d="M38 100 L38 55 Q38 28 190 28 Q342 28 342 55 L342 100" stroke="#c9991e" stroke-width=".8" fill="none" opacity=".28"/>
-          <!-- inner arch -->
-          <path d="M56 100 L56 60 Q56 42 190 42 Q324 42 324 60 L324 100" stroke="#c9991e" stroke-width=".5" fill="none" opacity=".18"/>
+        <!-- Church arch in parchment tones -->
+        <svg viewBox="0 0 400 104" fill="none" style="width:100%;max-width:390px">
+          <path d="M20 104 L20 52 Q20 8 200 8 Q380 8 380 52 L380 104" stroke="#a87820" stroke-width="1.3" fill="none" opacity=".4"/>
+          <path d="M40 104 L40 57 Q40 30 200 30 Q360 30 360 57 L360 104" stroke="#a87820" stroke-width=".8" fill="none" opacity=".26"/>
+          <path d="M58 104 L58 62 Q58 44 200 44 Q342 44 342 62 L342 104" stroke="#a87820" stroke-width=".5" fill="none" opacity=".16"/>
           <!-- keystone -->
-          <rect x="180" y="0" width="20" height="16" rx="2" fill="none" stroke="#c9991e" stroke-width=".9" opacity=".6"/>
-          <circle cx="190" cy="8" r="3" fill="#c9991e" opacity=".5"/>
-          <!-- left pillar detail -->
-          <line x1="18" y1="72" x2="38" y2="72" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-          <line x1="18" y1="84" x2="38" y2="84" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-          <line x1="18" y1="93" x2="38" y2="93" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-          <!-- right pillar detail -->
-          <line x1="342" y1="72" x2="362" y2="72" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-          <line x1="342" y1="84" x2="362" y2="84" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
-          <line x1="342" y1="93" x2="362" y2="93" stroke="#c9991e" stroke-width=".6" opacity=".35"/>
+          <rect x="190" y="2" width="20" height="14" rx="2" fill="none" stroke="#a87820" stroke-width=".8" opacity=".55"/>
+          <circle cx="200" cy="9" r="2.8" fill="#a87820" opacity=".45"/>
+          <!-- pillar details left -->
+          <line x1="20" y1="75" x2="40" y2="75" stroke="#a87820" stroke-width=".6" opacity=".32"/>
+          <line x1="20" y1="88" x2="40" y2="88" stroke="#a87820" stroke-width=".6" opacity=".32"/>
+          <line x1="20" y1="97" x2="40" y2="97" stroke="#a87820" stroke-width=".6" opacity=".32"/>
+          <!-- pillar details right -->
+          <line x1="360" y1="75" x2="380" y2="75" stroke="#a87820" stroke-width=".6" opacity=".32"/>
+          <line x1="360" y1="88" x2="380" y2="88" stroke="#a87820" stroke-width=".6" opacity=".32"/>
+          <line x1="360" y1="97" x2="380" y2="97" stroke="#a87820" stroke-width=".6" opacity=".32"/>
           <!-- LEFT rosette -->
-          <g transform="translate(88,24)" opacity=".55">
-            <circle r="9" fill="none" stroke="#c9991e" stroke-width=".9"/>
-            <circle r="3.5" fill="#c9991e" opacity=".55"/>
-            <ellipse ry="8" rx="3.5" fill="#6e1830" opacity=".5"/>
-            <ellipse ry="3.5" rx="8" fill="#6e1830" opacity=".5"/>
-            <ellipse ry="7" rx="3" fill="#6e1830" opacity=".35" transform="rotate(45)"/>
-            <ellipse ry="7" rx="3" fill="#6e1830" opacity=".35" transform="rotate(-45)"/>
+          <g transform="translate(96,26)" opacity=".5">
+            <circle r="9" fill="none" stroke="#a87820" stroke-width=".9"/>
+            <circle r="3.5" fill="#a87820" opacity=".5"/>
+            <ellipse ry="8" rx="3.5" fill="#5c0f20" opacity=".5"/>
+            <ellipse ry="3.5" rx="8" fill="#5c0f20" opacity=".5"/>
+            <ellipse ry="7" rx="3" fill="#5c0f20" opacity=".32" transform="rotate(45)"/>
+            <ellipse ry="7" rx="3" fill="#5c0f20" opacity=".32" transform="rotate(-45)"/>
           </g>
           <!-- RIGHT rosette -->
-          <g transform="translate(292,24)" opacity=".55">
-            <circle r="9" fill="none" stroke="#c9991e" stroke-width=".9"/>
-            <circle r="3.5" fill="#c9991e" opacity=".55"/>
-            <ellipse ry="8" rx="3.5" fill="#6e1830" opacity=".5"/>
-            <ellipse ry="3.5" rx="8" fill="#6e1830" opacity=".5"/>
-            <ellipse ry="7" rx="3" fill="#6e1830" opacity=".35" transform="rotate(45)"/>
-            <ellipse ry="7" rx="3" fill="#6e1830" opacity=".35" transform="rotate(-45)"/>
+          <g transform="translate(304,26)" opacity=".5">
+            <circle r="9" fill="none" stroke="#a87820" stroke-width=".9"/>
+            <circle r="3.5" fill="#a87820" opacity=".5"/>
+            <ellipse ry="8" rx="3.5" fill="#5c0f20" opacity=".5"/>
+            <ellipse ry="3.5" rx="8" fill="#5c0f20" opacity=".5"/>
+            <ellipse ry="7" rx="3" fill="#5c0f20" opacity=".32" transform="rotate(45)"/>
+            <ellipse ry="7" rx="3" fill="#5c0f20" opacity=".32" transform="rotate(-45)"/>
           </g>
         </svg>
       </div>
 
-      <!-- RIGHT: sm md lg xl -->
-      <div class="candle-unit sz-sm">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <!-- RIGHT sm md lg xl -->
+      <div class="candle sz-sm">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div></div>
+        <div class="wax"><div class="c-aura"></div></div>
       </div>
-      <div class="candle-unit sz-md">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-md">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div></div>
+        <div class="wax"><div class="c-aura"></div></div>
       </div>
-      <div class="candle-unit sz-lg">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-lg">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div><div class="wax-drip" style="left:5px;height:8px"></div></div>
+        <div class="wax"><div class="c-aura"></div><div class="wax-drip" style="left:4px;height:10px"></div></div>
       </div>
-      <div class="candle-unit sz-xl">
-        <div class="flame-assembly"><div class="f-glow"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
+      <div class="candle sz-xl">
+        <div class="flame-wrap"><div class="f-aura"></div><div class="f-outer"></div><div class="f-mid"></div><div class="f-core"></div></div>
         <div class="wick"></div>
-        <div class="wax-body"><div class="candle-aura"></div><div class="wax-drip" style="left:5px;height:14px"></div><div class="wax-drip" style="left:12px;height:8px"></div></div>
+        <div class="wax"><div class="c-aura"></div><div class="wax-drip" style="left:4px;height:16px"></div><div class="wax-drip" style="left:12px;height:9px"></div></div>
       </div>
     </div>
 
@@ -685,20 +665,20 @@ body::after{
     <div class="g32"></div>
   </div>
 
-  <!-- ══ SCENE 2: VERSE ══ -->
+  <!-- ══ S2: VERSE ══ -->
   <div class="scene" id="s2">
-    <p class="verse-italic">"I hold you in my heart, for we have<br>shared God's blessings."</p>
+    <p class="verse-text">"I hold you in my heart, for we have<br>shared God's blessings."</p>
     <span class="verse-ref">Philippians 1 : 7</span>
     <div class="g48"></div>
   </div>
 
-  <!-- ══ SCENE 3: DIVIDER ══ -->
+  <!-- ══ S3: DIVIDER ══ -->
   <div class="scene" id="s3">
-    <div class="div-gold"><span class="ln"></span><span class="dia"></span><span class="ln"></span></div>
+    <div class="divider"><span class="div-line"></span><span class="div-diamond"></span><span class="div-line"></span></div>
     <div class="g48"></div>
   </div>
 
-  <!-- ══ SCENE 4: NAMES ══ -->
+  <!-- ══ S4: NAMES ══ -->
   <div class="scene" id="s4">
     <span class="name-groom">Jinsu</span>
     <span class="name-amp">&amp;</span>
@@ -706,103 +686,109 @@ body::after{
     <div class="g48"></div>
   </div>
 
-  <!-- ══ SCENE 5: GARLAND ══ -->
+  <!-- ══ S5: FULL GARLAND ══ -->
   <div class="scene" id="s5">
-    <svg width="100%" viewBox="0 0 640 62" fill="none" style="max-width:640px;opacity:.88">
+    <svg width="100%" viewBox="0 0 660 64" fill="none" style="max-width:660px;opacity:.88">
       <!-- vine rope -->
-      <path d="M0 34 Q30 18 60 34 Q90 50 120 34 Q150 18 180 34 Q210 50 240 34 Q270 18 300 34 Q330 50 360 34 Q390 18 420 34 Q450 50 480 34 Q510 18 540 34 Q570 50 600 34 Q625 22 640 34" stroke="#6a4010" stroke-width="1.5" fill="none" opacity=".65"/>
-      <!-- extra vine lines for lushness -->
-      <path d="M0 38 Q30 52 60 38" stroke="#4a3010" stroke-width=".7" fill="none" opacity=".4"/>
-      <path d="M580 38 Q610 52 640 38" stroke="#4a3010" stroke-width=".7" fill="none" opacity=".4"/>
+      <path d="M0 36 Q30 20 60 36 Q90 52 120 36 Q150 20 180 36 Q210 52 240 36 Q270 20 300 36 Q330 52 360 36 Q390 20 420 36 Q450 52 480 36 Q510 20 540 36 Q570 52 600 36 Q630 20 660 36" stroke="#705010" stroke-width="1.5" fill="none" opacity=".6"/>
+      <!-- secondary vine -->
+      <path d="M0 40 Q30 54 60 40" stroke="#5a3a08" stroke-width=".7" fill="none" opacity=".35"/>
+      <path d="M600 40 Q630 54 660 40" stroke="#5a3a08" stroke-width=".7" fill="none" opacity=".35"/>
 
-      <!-- FLOWERS (maroon + gold variations) -->
-      <!-- F1 @ 60 -->
-      <g><circle cx="60" cy="34" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="60" cy="34" r="4" fill="#c9991e" opacity=".8"/><ellipse cx="60" cy="24" rx="3.5" ry="7" fill="#6e1830" opacity=".65"/><ellipse cx="70" cy="34" rx="7" ry="3.5" fill="#6e1830" opacity=".65"/><ellipse cx="60" cy="44" rx="3.5" ry="7" fill="#6e1830" opacity=".65"/><ellipse cx="50" cy="34" rx="7" ry="3.5" fill="#6e1830" opacity=".65"/><ellipse cx="53" cy="27" rx="3" ry="5.5" fill="#6e1830" opacity=".4" transform="rotate(-45 53 27)"/><ellipse cx="67" cy="27" rx="3" ry="5.5" fill="#6e1830" opacity=".4" transform="rotate(45 67 27)"/></g>
-      <!-- F2 @ 180 -->
-      <g><circle cx="180" cy="34" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="180" cy="34" r="4" fill="#c9991e" opacity=".8"/><ellipse cx="180" cy="24" rx="3.5" ry="7" fill="#8b2040" opacity=".6"/><ellipse cx="190" cy="34" rx="7" ry="3.5" fill="#8b2040" opacity=".6"/><ellipse cx="180" cy="44" rx="3.5" ry="7" fill="#8b2040" opacity=".6"/><ellipse cx="170" cy="34" rx="7" ry="3.5" fill="#8b2040" opacity=".6"/></g>
-      <!-- HERO FLOWER @ 320 -->
-      <g><circle cx="320" cy="34" r="13" fill="none" stroke="#c9991e" stroke-width="1.1"/><circle cx="320" cy="34" r="11" fill="none" stroke="#8a6010" stroke-width=".5" opacity=".4"/><circle cx="320" cy="34" r="5" fill="#e8bf60" opacity=".95"/><circle cx="320" cy="34" r="2.5" fill="#fff5e8" opacity=".7"/><ellipse cx="320" cy="20" rx="4" ry="9" fill="#c9991e" opacity=".75"/><ellipse cx="334" cy="34" rx="9" ry="4" fill="#c9991e" opacity=".75"/><ellipse cx="320" cy="48" rx="4" ry="9" fill="#c9991e" opacity=".75"/><ellipse cx="306" cy="34" rx="9" ry="4" fill="#c9991e" opacity=".75"/><ellipse cx="310" cy="24" rx="3.5" ry="7" fill="#c9991e" opacity=".55" transform="rotate(-45 310 24)"/><ellipse cx="330" cy="24" rx="3.5" ry="7" fill="#c9991e" opacity=".55" transform="rotate(45 330 24)"/><ellipse cx="330" cy="44" rx="3.5" ry="7" fill="#c9991e" opacity=".55" transform="rotate(-45 330 44)"/><ellipse cx="310" cy="44" rx="3.5" ry="7" fill="#c9991e" opacity=".55" transform="rotate(45 310 44)"/></g>
-      <!-- F4 @ 460 -->
-      <g><circle cx="460" cy="34" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="460" cy="34" r="4" fill="#c9991e" opacity=".8"/><ellipse cx="460" cy="24" rx="3.5" ry="7" fill="#8b2040" opacity=".6"/><ellipse cx="470" cy="34" rx="7" ry="3.5" fill="#8b2040" opacity=".6"/><ellipse cx="460" cy="44" rx="3.5" ry="7" fill="#8b2040" opacity=".6"/><ellipse cx="450" cy="34" rx="7" ry="3.5" fill="#8b2040" opacity=".6"/></g>
-      <!-- F5 @ 580 -->
-      <g><circle cx="580" cy="34" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="580" cy="34" r="4" fill="#c9991e" opacity=".8"/><ellipse cx="580" cy="24" rx="3.5" ry="7" fill="#6e1830" opacity=".65"/><ellipse cx="590" cy="34" rx="7" ry="3.5" fill="#6e1830" opacity=".65"/><ellipse cx="580" cy="44" rx="3.5" ry="7" fill="#6e1830" opacity=".65"/><ellipse cx="570" cy="34" rx="7" ry="3.5" fill="#6e1830" opacity=".65"/></g>
+      <!-- FLOWER 1 @ 60 -->
+      <g><circle cx="60" cy="36" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="60" cy="36" r="4" fill="#c89830" opacity=".82"/><ellipse cx="60" cy="26" rx="3.5" ry="7" fill="#5c0f20" opacity=".65"/><ellipse cx="70" cy="36" rx="7" ry="3.5" fill="#5c0f20" opacity=".65"/><ellipse cx="60" cy="46" rx="3.5" ry="7" fill="#5c0f20" opacity=".65"/><ellipse cx="50" cy="36" rx="7" ry="3.5" fill="#5c0f20" opacity=".65"/><ellipse cx="53" cy="29" rx="3" ry="5.5" fill="#5c0f20" opacity=".42" transform="rotate(-45 53 29)"/><ellipse cx="67" cy="29" rx="3" ry="5.5" fill="#5c0f20" opacity=".42" transform="rotate(45 67 29)"/></g>
+      <!-- FLOWER 2 @ 180 -->
+      <g><circle cx="180" cy="36" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="180" cy="36" r="4" fill="#c89830" opacity=".82"/><ellipse cx="180" cy="26" rx="3.5" ry="7" fill="#7a1530" opacity=".6"/><ellipse cx="190" cy="36" rx="7" ry="3.5" fill="#7a1530" opacity=".6"/><ellipse cx="180" cy="46" rx="3.5" ry="7" fill="#7a1530" opacity=".6"/><ellipse cx="170" cy="36" rx="7" ry="3.5" fill="#7a1530" opacity=".6"/></g>
+      <!-- HERO FLOWER @ 330 -->
+      <g><circle cx="330" cy="36" r="13" fill="none" stroke="#c89830" stroke-width="1.1"/><circle cx="330" cy="36" r="10" fill="none" stroke="#8a6010" stroke-width=".5" opacity=".4"/><circle cx="330" cy="36" r="5"  fill="#e0b850" opacity=".95"/><circle cx="330" cy="36" r="2.5" fill="#faf4e8" opacity=".7"/><ellipse cx="330" cy="21" rx="4" ry="10" fill="#c89830" opacity=".75"/><ellipse cx="345" cy="36" rx="10" ry="4" fill="#c89830" opacity=".75"/><ellipse cx="330" cy="51" rx="4" ry="10" fill="#c89830" opacity=".75"/><ellipse cx="315" cy="36" rx="10" ry="4" fill="#c89830" opacity=".75"/><ellipse cx="319" cy="25" rx="3.5" ry="7.5" fill="#c89830" opacity=".55" transform="rotate(-45 319 25)"/><ellipse cx="341" cy="25" rx="3.5" ry="7.5" fill="#c89830" opacity=".55" transform="rotate(45 341 25)"/><ellipse cx="341" cy="47" rx="3.5" ry="7.5" fill="#c89830" opacity=".55" transform="rotate(-45 341 47)"/><ellipse cx="319" cy="47" rx="3.5" ry="7.5" fill="#c89830" opacity=".55" transform="rotate(45 319 47)"/></g>
+      <!-- FLOWER 4 @ 480 -->
+      <g><circle cx="480" cy="36" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="480" cy="36" r="4" fill="#c89830" opacity=".82"/><ellipse cx="480" cy="26" rx="3.5" ry="7" fill="#7a1530" opacity=".6"/><ellipse cx="490" cy="36" rx="7" ry="3.5" fill="#7a1530" opacity=".6"/><ellipse cx="480" cy="46" rx="3.5" ry="7" fill="#7a1530" opacity=".6"/><ellipse cx="470" cy="36" rx="7" ry="3.5" fill="#7a1530" opacity=".6"/></g>
+      <!-- FLOWER 5 @ 600 -->
+      <g><circle cx="600" cy="36" r="9" fill="none" stroke="#8a6010" stroke-width=".9"/><circle cx="600" cy="36" r="4" fill="#c89830" opacity=".82"/><ellipse cx="600" cy="26" rx="3.5" ry="7" fill="#5c0f20" opacity=".65"/><ellipse cx="610" cy="36" rx="7" ry="3.5" fill="#5c0f20" opacity=".65"/><ellipse cx="600" cy="46" rx="3.5" ry="7" fill="#5c0f20" opacity=".65"/><ellipse cx="590" cy="36" rx="7" ry="3.5" fill="#5c0f20" opacity=".65"/></g>
 
       <!-- LEAVES -->
-      <path d="M96 34 Q106 20 116 28 Q106 42 96 34Z" fill="#2e5828" opacity=".6"/>
-      <path d="M218 34 Q228 22 238 30 Q228 44 218 34Z" fill="#2e5828" opacity=".6"/>
-      <path d="M400 34 Q410 20 420 28 Q410 42 400 34Z" fill="#2e5828" opacity=".6"/>
-      <path d="M516 34 Q526 22 536 30 Q526 44 516 34Z" fill="#2e5828" opacity=".6"/>
+      <path d="M100 36 Q112 20 124 30 Q112 44 100 36Z" fill="#2a5020" opacity=".58"/>
+      <path d="M230 36 Q242 22 254 32 Q242 46 230 36Z" fill="#2a5020" opacity=".58"/>
+      <path d="M406 36 Q418 20 430 30 Q418 44 406 36Z" fill="#2a5020" opacity=".58"/>
+      <path d="M530 36 Q542 22 554 32 Q542 46 530 36Z" fill="#2a5020" opacity=".58"/>
       <!-- mini leaves -->
-      <path d="M136 34 Q142 26 148 34 Q142 42 136 34Z" fill="#2e5828" opacity=".45"/>
-      <path d="M490 34 Q496 26 502 34 Q496 42 490 34Z" fill="#2e5828" opacity=".45"/>
+      <path d="M140 36 Q147 26 154 36 Q147 46 140 36Z" fill="#2a5020" opacity=".42"/>
+      <path d="M500 36 Q507 26 514 36 Q507 46 500 36Z" fill="#2a5020" opacity=".42"/>
       <!-- hanging buds -->
-      <ellipse cx="150" cy="48" rx="3.5" ry="6" fill="#6e1830" opacity=".45"/>
-      <line x1="150" y1="34" x2="150" y2="42" stroke="#6a4010" stroke-width=".8" opacity=".5"/>
-      <ellipse cx="270" cy="48" rx="3" ry="5" fill="#8b2040" opacity=".4"/>
-      <line x1="270" y1="34" x2="270" y2="43" stroke="#6a4010" stroke-width=".8" opacity=".5"/>
-      <ellipse cx="370" cy="48" rx="3" ry="5" fill="#8b2040" opacity=".4"/>
-      <line x1="370" y1="34" x2="370" y2="43" stroke="#6a4010" stroke-width=".8" opacity=".5"/>
-      <ellipse cx="490" cy="48" rx="3.5" ry="6" fill="#6e1830" opacity=".45"/>
-      <line x1="490" y1="34" x2="490" y2="42" stroke="#6a4010" stroke-width=".8" opacity=".5"/>
-      <!-- tiny gold dots on vine -->
-      <circle cx="30" cy="34" r="2" fill="#c9991e" opacity=".3"/>
-      <circle cx="120" cy="34" r="2" fill="#c9991e" opacity=".3"/>
-      <circle cx="240" cy="34" r="2" fill="#c9991e" opacity=".3"/>
-      <circle cx="400" cy="34" r="2" fill="#c9991e" opacity=".3"/>
-      <circle cx="520" cy="34" r="2" fill="#c9991e" opacity=".3"/>
-      <circle cx="615" cy="34" r="2" fill="#c9991e" opacity=".3"/>
+      <ellipse cx="156" cy="52" rx="3.5" ry="6" fill="#5c0f20" opacity=".45"/>
+      <line x1="156" y1="36" x2="156" y2="46" stroke="#705010" stroke-width=".9" opacity=".5"/>
+      <ellipse cx="280" cy="52" rx="3" ry="5.5" fill="#7a1530" opacity=".4"/>
+      <line x1="280" y1="36" x2="280" y2="46" stroke="#705010" stroke-width=".9" opacity=".5"/>
+      <ellipse cx="380" cy="52" rx="3" ry="5.5" fill="#7a1530" opacity=".4"/>
+      <line x1="380" y1="36" x2="380" y2="46" stroke="#705010" stroke-width=".9" opacity=".5"/>
+      <ellipse cx="504" cy="52" rx="3.5" ry="6" fill="#5c0f20" opacity=".45"/>
+      <line x1="504" y1="36" x2="504" y2="46" stroke="#705010" stroke-width=".9" opacity=".5"/>
+      <!-- gold vine dots -->
+      <circle cx="30"  cy="36" r="2" fill="#c89830" opacity=".28"/>
+      <circle cx="120" cy="36" r="2" fill="#c89830" opacity=".28"/>
+      <circle cx="250" cy="36" r="2" fill="#c89830" opacity=".28"/>
+      <circle cx="410" cy="36" r="2" fill="#c89830" opacity=".28"/>
+      <circle cx="550" cy="36" r="2" fill="#c89830" opacity=".28"/>
+      <circle cx="635" cy="36" r="2" fill="#c89830" opacity=".28"/>
     </svg>
     <div class="g48"></div>
   </div>
 
-  <!-- ══ SCENE 6: FAMILIES + INVITE ══ -->
+  <!-- ══ S6: FAMILIES + INVITE ══ -->
   <div class="scene" id="s6">
     <div class="fam-grid">
-      <div><p class="fam-lbl">Son of</p><p class="fam-nm">Mrs. Susan Abraham<br>&amp; Mr. Gigi Abraham</p></div>
-      <div><p class="fam-lbl">Daughter of</p><p class="fam-nm">Mrs. Sosamma Sabu<br>&amp; Mr. Sabu Oommen</p></div>
+      <div>
+        <p class="fam-lbl">Son of</p>
+        <p class="fam-nm">Mrs. Susan Abraham<br>&amp; Mr. Gigi Abraham</p>
+      </div>
+      <div>
+        <p class="fam-lbl">Daughter of</p>
+        <p class="fam-nm">Mrs. Sosamma Sabu<br>&amp; Mr. Sabu Oommen</p>
+      </div>
     </div>
     <div class="g48"></div>
-    <span class="inv-lbl">Together with their families</span>
-    <p class="inv-body">Joyfully request the honour of your presence<br>at their wedding celebration</p>
-    <div class="g64"></div>
+    <span class="tog-lbl">Together with their families</span>
+    <p class="tog-body">Joyfully request the honour of your presence<br>at their wedding celebration</p>
+    <div class="g56"></div>
   </div>
 
-  <!-- ══ SCENE 7: DATE ══ -->
+  <!-- ══ S7: DIVIDER ══ -->
   <div class="scene" id="s7">
-    <div class="date-slab">
-      <div class="ds3"></div><div class="ds4"></div>
-      <div class="ds-inner"></div>
+    <div class="divider"><span class="div-line"></span><span class="div-diamond"></span><span class="div-line"></span></div>
+    <div class="g48"></div>
+  </div>
+
+  <!-- ══ S8: DATE PANEL ══ -->
+  <div class="scene" id="s8">
+    <div class="date-panel">
+      <div class="dp3"></div><div class="dp4"></div>
+      <div class="dp-inner"></div>
       <div class="date-row">
-        <div class="date-col">
+        <div style="text-align:center">
           <p class="d-day">Monday</p>
           <span class="d-num">11</span>
         </div>
         <div class="d-sep"></div>
-        <div class="date-col">
+        <div style="text-align:left">
           <span class="d-month">May</span>
           <span class="d-year">— 2026 —</span>
-          <div class="d-cross" style="margin-top:14px">
-            <svg width="28" height="36" viewBox="0 0 28 36" fill="none">
-              <line x1="14" y1="2" x2="14" y2="34" stroke="#c9991e" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="4" y1="11" x2="24" y2="11" stroke="#c9991e" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="14" cy="11" r="3" fill="#c9991e" opacity=".7"/>
+          <div style="margin-top:16px;display:flex;justify-content:center">
+            <svg width="32" height="40" viewBox="0 0 32 40" fill="none">
+              <line x1="16" y1="2" x2="16" y2="38" stroke="#f0d080" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="4" y1="13" x2="28" y2="13" stroke="#f0d080" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="16" cy="13" r="3.5" fill="#f0d080" opacity=".75"/>
+              <circle cx="16" cy="13" r="1.8" fill="#faf4e8"/>
             </svg>
           </div>
         </div>
       </div>
     </div>
-    <div class="g64"></div>
+    <div class="g56"></div>
   </div>
 
-  <!-- ══ SCENE 8: DIVIDER ══ -->
-  <div class="scene" id="s8">
-    <div class="div-gold"><span class="ln"></span><span class="dia"></span><span class="ln"></span></div>
-    <div class="g48"></div>
-  </div>
-
-  <!-- ══ SCENE 9: VENUES ══ -->
+  <!-- ══ S9: VENUES ══ -->
   <div class="scene" id="s9">
-    <div class="venue-wrap">
+    <div class="venue-grid">
       <div class="vc">
         <span class="vc-badge">Holy Matrimony</span>
         <p class="vc-name">St. Osio's Orthodox<br>Syrian Church</p>
@@ -816,38 +802,44 @@ body::after{
         <a class="vc-link" href="https://maps.app.goo.gl/KMdTwt97tJiRn9mg7" target="_blank">View on Google Maps</a>
       </div>
     </div>
-    <div class="g80"></div>
+    <div class="g64"></div>
   </div>
 
-  <!-- ══ SCENE 10: NOTE ══ -->
+  <!-- ══ S10: DIVIDER ══ -->
   <div class="scene" id="s10">
-    <span class="note-q">"</span>
-    <p class="note-txt">Your presence would mean the world to us as we begin this beautiful journey together. We look forward to celebrating this joyful milestone surrounded by the warmth of family and the blessings of dear friends like you.</p>
-    <span class="note-sig">— Jinsu</span>
-    <div class="g80"></div>
+    <div class="divider"><span class="div-line"></span><span class="div-diamond"></span><span class="div-line"></span></div>
+    <div class="g48"></div>
   </div>
 
-  <!-- ══ SCENE 11: BOTTOM GARLAND + FOOTER ══ -->
+  <!-- ══ S11: NOTE ══ -->
   <div class="scene" id="s11">
-    <!-- mini bottom garland -->
-    <svg width="100%" viewBox="0 0 480 46" fill="none" style="max-width:480px;opacity:.75;margin-bottom:32px">
-      <path d="M0 26 Q24 14 48 26 Q72 38 96 26 Q120 14 144 26 Q168 38 192 26 Q216 14 240 26 Q264 38 288 26 Q312 14 336 26 Q360 38 384 26 Q408 14 432 26 Q456 38 480 26" stroke="#6a4010" stroke-width="1.2" fill="none" opacity=".55"/>
-      <g transform="translate(240,26)">
-        <circle r="12" fill="none" stroke="#c9991e" stroke-width="1" opacity=".6"/>
-        <circle r="7" fill="none" stroke="#c9991e" stroke-width=".5" opacity=".35"/>
-        <circle r="3.5" fill="#c9991e" opacity=".7"/>
-        <line x1="0" y1="-12" x2="0" y2="12" stroke="#c9991e" stroke-width=".8" opacity=".4"/>
-        <line x1="-12" y1="0" x2="12" y2="0" stroke="#c9991e" stroke-width=".8" opacity=".4"/>
-        <circle cx="0" cy="-18" r="2" fill="#c9991e" opacity=".4"/>
-        <circle cx="0" cy="18" r="2" fill="#c9991e" opacity=".4"/>
-        <circle cx="-18" cy="0" r="2" fill="#c9991e" opacity=".4"/>
-        <circle cx="18" cy="0" r="2" fill="#c9991e" opacity=".4"/>
+    <span class="note-q">"</span>
+    <p class="note-body">Your presence would mean the world to us as we begin this beautiful journey together. We look forward to celebrating this joyful milestone surrounded by the warmth of family and the blessings of dear friends like you.</p>
+    <span class="note-sig">— Jinsu</span>
+    <div class="g64"></div>
+  </div>
+
+  <!-- ══ S12: BOTTOM GARLAND + FOOTER ══ -->
+  <div class="scene" id="s12">
+    <svg width="100%" viewBox="0 0 500 52" fill="none" style="max-width:500px;opacity:.78;margin-bottom:32px">
+      <path d="M0 28 Q25 14 50 28 Q75 42 100 28 Q125 14 150 28 Q175 42 200 28 Q225 14 250 28 Q275 42 300 28 Q325 14 350 28 Q375 42 400 28 Q425 14 450 28 Q475 42 500 28" stroke="#705010" stroke-width="1.2" fill="none" opacity=".55"/>
+      <!-- center cross medallion -->
+      <g transform="translate(250,28)">
+        <circle r="16" fill="none" stroke="#a87820" stroke-width=".9" opacity=".55"/>
+        <circle r="9"  fill="none" stroke="#a87820" stroke-width=".5" opacity=".32"/>
+        <circle r="3.5" fill="#a87820" opacity=".6"/>
+        <line x1="0" y1="-16" x2="0"  y2="16"  stroke="#a87820" stroke-width=".9" opacity=".45"/>
+        <line x1="-16" y1="0" x2="16" y2="0"   stroke="#a87820" stroke-width=".9" opacity=".45"/>
+        <circle cx="0"  cy="-23" r="2.2" fill="#a87820" opacity=".38"/>
+        <circle cx="0"  cy="23"  r="2.2" fill="#a87820" opacity=".38"/>
+        <circle cx="-23" cy="0" r="2.2"  fill="#a87820" opacity=".38"/>
+        <circle cx="23"  cy="0" r="2.2"  fill="#a87820" opacity=".38"/>
       </g>
       <!-- side flowers -->
-      <g><circle cx="96" cy="26" r="7" fill="none" stroke="#8a6010" stroke-width=".8"/><circle cx="96" cy="26" r="3" fill="#c9991e" opacity=".75"/><ellipse cx="96" cy="18" rx="3" ry="6" fill="#6e1830" opacity=".6"/><ellipse cx="104" cy="26" rx="6" ry="3" fill="#6e1830" opacity=".6"/><ellipse cx="96" cy="34" rx="3" ry="6" fill="#6e1830" opacity=".6"/><ellipse cx="88" cy="26" rx="6" ry="3" fill="#6e1830" opacity=".6"/></g>
-      <g><circle cx="384" cy="26" r="7" fill="none" stroke="#8a6010" stroke-width=".8"/><circle cx="384" cy="26" r="3" fill="#c9991e" opacity=".75"/><ellipse cx="384" cy="18" rx="3" ry="6" fill="#6e1830" opacity=".6"/><ellipse cx="392" cy="26" rx="6" ry="3" fill="#6e1830" opacity=".6"/><ellipse cx="384" cy="34" rx="3" ry="6" fill="#6e1830" opacity=".6"/><ellipse cx="376" cy="26" rx="6" ry="3" fill="#6e1830" opacity=".6"/></g>
-      <path d="M156 26 Q164 15 172 26 Q164 37 156 26Z" fill="#2e5828" opacity=".55"/>
-      <path d="M308 26 Q316 15 324 26 Q316 37 308 26Z" fill="#2e5828" opacity=".55"/>
+      <g><circle cx="100" cy="28" r="7" fill="none" stroke="#8a6010" stroke-width=".8"/><circle cx="100" cy="28" r="3" fill="#c89830" opacity=".78"/><ellipse cx="100" cy="20" rx="3" ry="6" fill="#5c0f20" opacity=".62"/><ellipse cx="108" cy="28" rx="6" ry="3" fill="#5c0f20" opacity=".62"/><ellipse cx="100" cy="36" rx="3" ry="6" fill="#5c0f20" opacity=".62"/><ellipse cx="92"  cy="28" rx="6" ry="3" fill="#5c0f20" opacity=".62"/></g>
+      <g><circle cx="400" cy="28" r="7" fill="none" stroke="#8a6010" stroke-width=".8"/><circle cx="400" cy="28" r="3" fill="#c89830" opacity=".78"/><ellipse cx="400" cy="20" rx="3" ry="6" fill="#5c0f20" opacity=".62"/><ellipse cx="408" cy="28" rx="6" ry="3" fill="#5c0f20" opacity=".62"/><ellipse cx="400" cy="36" rx="3" ry="6" fill="#5c0f20" opacity=".62"/><ellipse cx="392" cy="28" rx="6" ry="3" fill="#5c0f20" opacity=".62"/></g>
+      <path d="M162 28 Q172 16 182 28 Q172 40 162 28Z" fill="#2a5020" opacity=".52"/>
+      <path d="M318 28 Q328 16 338 28 Q328 40 318 28Z" fill="#2a5020" opacity=".52"/>
     </svg>
 
     <p class="ft-lbl">With love &amp; blessings from</p>
@@ -858,45 +850,34 @@ body::after{
 </div>
 
 <script>
-/* STARS */
-(()=>{
-  const c=document.getElementById('stars');
-  for(let i=0;i<200;i++){
-    const s=document.createElement('div');s.className='star';
-    const sz=Math.random()*1.8+.4;
-    s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;--d:${2+Math.random()*4}s;--dl:${Math.random()*6}s`;
-    c.appendChild(s);
-  }
-})();
-
-/* PETALS */
+/* ── PETALS ── */
 (()=>{
   const c=document.getElementById('petals');
-  const cols=['#6e1830','#8b2040','#a83050','#c04060','#5a1025','#9b2535','#7a1c30'];
-  for(let i=0;i<30;i++){
+  const cols=['#5c0f20','#7a1530','#9b2040','#b83050','#8a2838','#c04060'];
+  for(let i=0;i<28;i++){
     const p=document.createElement('div');p.className='petal';
-    const sz=6+Math.random()*13;
-    const br=Math.random()>.5?'70% 0 70% 0':'0 70% 0 70%';
-    p.style.cssText=`left:${Math.random()*100}%;width:${sz}px;height:${sz*1.4}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${br};--dx:${(Math.random()-.5)*130}px;--rot:${(Math.random()>.5?1:-1)*(200+Math.random()*400)}deg;animation-duration:${9+Math.random()*10}s;animation-delay:${Math.random()*14}s`;
+    const sz=6+Math.random()*12;
+    const br=Math.random()>.5?'65% 0 65% 0':'0 65% 0 65%';
+    p.style.cssText=`left:${Math.random()*100}%;width:${sz}px;height:${sz*1.35}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${br};opacity:.62;--dx:${(Math.random()-.5)*120}px;--rot:${(Math.random()>.5?1:-1)*(200+Math.random()*380)}deg;animation-duration:${8+Math.random()*10}s;animation-delay:${Math.random()*13}s`;
     c.appendChild(p);
   }
 })();
 
-/* GOLD SPARKS */
+/* ── GOLD MOTES ── */
 (()=>{
-  const c=document.getElementById('sparks');
-  for(let i=0;i<36;i++){
-    const p=document.createElement('div');p.className='spark';
-    const sz=1.5+Math.random()*3;
-    p.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*70}%;width:${sz}px;height:${sz}px;--sx:${(Math.random()-.5)*44}px;animation-duration:${3.5+Math.random()*5}s;animation-delay:${Math.random()*10}s`;
+  const c=document.getElementById('motes');
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div');p.className='mote';
+    const sz=1.5+Math.random()*2.8;
+    p.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*65}%;width:${sz}px;height:${sz}px;--mx:${(Math.random()-.5)*38}px;animation-duration:${3.5+Math.random()*5}s;animation-delay:${Math.random()*10}s`;
     c.appendChild(p);
   }
 })();
 
-/* SCROLL REVEALS */
+/* ── SCROLL REVEALS ── */
 (()=>{
   const scenes=document.querySelectorAll('.scene');
-  setTimeout(()=>scenes[0].classList.add('visible'),600);
+  setTimeout(()=>scenes[0].classList.add('visible'),500);
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
   },{threshold:.1});
